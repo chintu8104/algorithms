@@ -11,21 +11,23 @@ package algorithm.cc150.chapter1;
 public class Question4 {
 
   public char[] replace(char[] input, int length) {
+    
+    char[] out = new char[length];
 
-    int pos = input.length - 1;
+    int pos = length - 1;
     //  traverse backwards
-    for (int i = length - 1; i >= 0; --i) {
+    for (int i = input.length - 1; i >= 0; --i) {
       if (input[i] == ' ') {
-        input[pos--] = '0';
-        input[pos--] = '2';
-        input[pos--] = '%';
+        out[pos--] = '0';
+        out[pos--] = '2';
+        out[pos--] = '%';
       }
       else {
-        input[pos--] = input[i];
+        out[pos--] = input[i];
       }
     }
 
-    return input;
+    return out;
   }
 
 }
